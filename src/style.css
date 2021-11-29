@@ -1,3 +1,14 @@
 body{
     background-color: bisque;
 }
+label {
+    display: block;
+}
+input:invalid+span:after {
+    content: '✖';
+    padding-left: 5px;
+}
+input:valid+span:after {
+    content: '✓';
+    padding-left: 5px;
+}

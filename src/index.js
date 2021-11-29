@@ -1,4 +1,6 @@
 import './style.css';
+import form from './toDoForm.js';
+
 let table = {
     tableDiv: document.createElement(`table`),
     headers: () => {
@@ -64,3 +66,6 @@ let factory = (due, title, desc,  priority) => {
 let schedule1 = factory(`hey`, `xiao`, `tyler`, `test`);
 table.headers();
 table.push(schedule1);
+
+calendar.startDate();
+calendar.endDate();

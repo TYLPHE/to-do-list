@@ -5,7 +5,9 @@ module.exports = {
     mode: "development",    
     entry: {
         index: './src/index.js',
-        print: './src/print.js',
+        factory: './src/factory.js',
+        form: './src/form/form.js',
+        calendar: './src/form/calendar.js',
     },
     plugins: [
     new HtmlWebpackPlugin({

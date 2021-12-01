@@ -4,8 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: "development",    
     entry: {
+        storage: './src/storage.js',
         index: './src/index.js',
         factory: './src/factory.js',
+        push: './src/push.js',
         form: './src/form/form.js',
         calendar: './src/form/calendar.js',
     },

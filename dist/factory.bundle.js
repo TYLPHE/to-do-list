@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/form/calendar.js":
-/*!******************************!*\
-  !*** ./src/form/calendar.js ***!
-  \******************************/
+/***/ "./src/factory.js":
+/*!************************!*\
+  !*** ./src/factory.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet calendar = {\n    calendarDiv: document.createElement(`div`),\n    init: () => {\n        calendar.calendarDiv.className = `calendar`;\n        // calendar.startDate(); going to just have a due date/time.\n        calendar.endDate();        \n    },\n    startDate: () => {\n        let label = document.createElement(`label`);\n            label.textContent = `Start (date & time): `;\n            label.for = `start`;\n        let input = document.createElement(`input`);\n            input.type = `datetime-local`;\n            input.id = `start`;\n            input.required = true;\n        //default value to current date and time\n            //add a `0` if getMinutes() is < 10 for formatting purposes\n        input.value = new Date().toISOString().slice(0,-13) + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();\n        //shows check or x icon if all <input> required fields entered \n        let span = document.createElement(`span`);\n            span.class = `validity`;\n        calendar.calendarDiv.append(label, input, span);\n    },\n    endDate: () => {\n        let label = document.createElement(`label`);\n            label.textContent = `Due: `;\n            label.for = `end`;\n        let input = document.createElement(`input`);\n            input.type = `datetime-local`;\n            input.id = `end`;\n            input.required = true;\n        let span = document.createElement(`span`);\n            span.class = `validity`;\n        calendar.calendarDiv.append(label, input, span);\n    }\n}\ncalendar.init();\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calendar.calendarDiv);\n\n//# sourceURL=webpack://to-do-list/./src/form/calendar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n//factory function to create to do contents\nfunction factory(due, desc, priority){\n    return {\n        due: due,\n        desc: desc,\n        priority: priority,\n    };\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (factory);\n\n//# sourceURL=webpack://to-do-list/./src/factory.js?");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/form/calendar.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/factory.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

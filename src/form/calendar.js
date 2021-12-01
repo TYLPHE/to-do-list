@@ -2,7 +2,7 @@ let calendar = {
     calendarDiv: document.createElement(`div`),
     init: () => {
         calendar.calendarDiv.className = `calendar`;
-        calendar.startDate();
+        // calendar.startDate(); going to just have a due date/time.
         calendar.endDate();        
     },
     startDate: () => {
@@ -23,7 +23,7 @@ let calendar = {
     },
     endDate: () => {
         let label = document.createElement(`label`);
-            label.textContent = `End (date & time): `;
+            label.textContent = `Due: `;
             label.for = `end`;
         let input = document.createElement(`input`);
             input.type = `datetime-local`;

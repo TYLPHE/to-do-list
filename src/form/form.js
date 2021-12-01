@@ -1,4 +1,7 @@
 import calendar from './calendar.js';
+import factory from '../factory.js';
+import push from '../push.js';
+import storage from '../storage.js';
 
 let form = {
     formDiv: document.createElement(`form`),
@@ -14,13 +17,20 @@ let form = {
     desc: () => {
         let desc = document.createElement(`div`);
             desc.className = `desc`;
+        let label = document.createElement(`label`);
+            label.textContent = `Description:`;
+            label.for = `text`
+        let textDiv = document.createElement(`div`);
+            textDiv.className = `text-div`
         let textBox = document.createElement(`textarea`);
             textBox.className = `text`;
+            textBox.id = `text`;
             textBox.required = true;
             textBox.placeholder = `Enter description here.`;
         let span = document.createElement(`span`);
             span.class = `validity`;
-        desc.append(textBox, span);
+        textDiv.append(textBox, span);
+        desc.append(label, textDiv);
         return desc;
     },
     priority: () => {
@@ -55,9 +65,30 @@ let form = {
             submit.textContent = `Submit`;
             submit.classList.add(`submit`);
             submit.formTarget = `_parent`;
+            submit.onsubmit = `return false`;
+            submit.onclick = (e) => {
+                e.preventDefault();
+                let due = document.getElementById(`end`).value;
+                let desc = document.getElementById(`text`).value;
+                let priority = ``; 
+                    if(document.querySelector(`input[name="radio"]:checked`) == null){
+                        priority = ` `;
+                    }
+                    else{
+                        priority = document.querySelector(`input[name="radio"]:checked`).id;
+                    }
+                console.log(due, desc, priority);
+                if(due && desc){
+                    console.log(`pass`);
+                    let submit = factory(due, desc, priority);
+                    storage.storage.push(submit);
+                    console.table(storage.storage);
+                    push();
+                }
+                else{console.log(`error`)};
+            }
         return submit;
     }
-
 }
 form.init();
 export default form.formDiv;

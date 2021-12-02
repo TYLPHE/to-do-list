@@ -2,9 +2,14 @@ import storage from './storage.js';
 
 //push populates table
 export default function push(){
+    //remove all lists
+    while(document.querySelector(`.list`)){
+        document.querySelector(`.table`).removeChild(document.querySelector(`.list`));
+    }
+    //read array and draw new list
     for(let i = 0; i < storage.storage.length; i++){
         let row = document.createElement(`tr`);
-
+        row.className = `list`;
         let due = document.createElement(`td`);
         let desc = document.createElement(`td`);
         let priority = document.createElement(`td`);

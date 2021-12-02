@@ -9,18 +9,12 @@ let table = {
     tableDiv: document.createElement(`table`),
     init: () => {
         storage.getset();
-        table.headers();
+        table.tableHeaders();
         table.tableDiv.className = `table`;
         document.body.append(form, table.tableDiv);
-        let schedule1 = factory(`hey`, `tyler`, `test`);
-        let schedule2 = factory(`now`,`red`, ``);
-        let schedule3 = factory(`blue`, `green`, `purple`);
-        storage.storage.push(schedule1);
-        storage.storage.push(schedule2);
-        storage.storage.push(schedule3);
         push();
     },
-    headers: () => {
+    tableHeaders: () => {
         let row = document.createElement(`tr`);
         let due = document.createElement(`th`);
         let desc = document.createElement(`th`);

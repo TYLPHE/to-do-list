@@ -79,10 +79,9 @@ let form = {
                     }
                 console.log(due, desc, priority);
                 if(due && desc){
-                    console.log(`pass`);
                     let submit = factory(due, desc, priority);
                     storage.storage.push(submit);
-                    console.table(storage.storage);
+                    storage.save();
                     push();
                 }
                 else{console.log(`error`)};

@@ -1,0 +1,10 @@
+*{
+    /* border: 1px solid black;  */
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: bisque;
+    margin: 0;
+    display: flex;
+    color:rgba(22, 22, 22, 0.959)
+}

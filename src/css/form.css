@@ -1,0 +1,93 @@
+/*general form css*/
+form{
+    padding: 1rem;
+    border: 5px solid black;
+    min-width: 16rem;
+}
+.form-title{
+    font-weight: bold;
+    text-align: center;
+}
+label {
+    display: block;
+}
+span{
+    margin: auto 0;
+}
+
+/*description css*/
+.desc{
+    border: 1px solid black;
+    padding: .3rem;
+}
+.desc:hover{
+    background-color: rgba(0, 0, 0, 0.068);
+    transition: 100ms;
+}
+.text-div{
+    display: flex;
+}
+textarea{
+    width: 90%;
+}
+textarea:invalid+span:after {
+    content: '✖';
+    color: red;
+    margin: 5px;
+}
+textarea:valid+span:after {
+    content: '✓';
+    color: green;
+    margin: 5px;
+}
+
+/*date css*/
+.calendar{
+    border: 1px solid black;
+    padding: .3rem;
+    margin: .15rem 0;
+}
+.calendar:hover{
+    background-color: rgba(0, 0, 0, 0.068);
+    transition: 100ms;
+}
+#end{
+    text-align: center;
+    line-height: 1.5rem;
+    width: 87.3%;
+}
+input:invalid+span:after {
+    content: '✖';
+    color: red;
+    padding: 0 5px;
+}
+input:valid+span:after {
+    content: '✓';
+    color: green;
+    padding: 0 5px;
+}
+
+/*priority css*/
+.priority{
+    border: 1px solid black;
+    padding: .3rem;
+}
+.priority:hover{
+    background-color: rgba(0, 0, 0, 0.068);
+    transition: 100ms;
+}
+.radio{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+.radio:hover{
+    font-weight: 600;
+}
+
+/*submit button css*/
+.submit{
+    padding: .2rem 2rem;
+    display: flex;
+    margin: .5rem auto;
+}

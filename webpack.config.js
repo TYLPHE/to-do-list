@@ -8,8 +8,12 @@ module.exports = {
         index: './src/index.js',
         factory: './src/factory.js',
         push: './src/push.js',
+        desc: './src/form/desc.js',
         form: './src/form/form.js',
         calendar: './src/form/calendar.js',
+        priority: './src/form/priority.js',
+        submit: './src/form/submit.js',
+        rowOptions: './src/rowOptions.js',
     },
     plugins: [
     new HtmlWebpackPlugin({

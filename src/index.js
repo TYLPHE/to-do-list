@@ -1,6 +1,7 @@
-import './style.css';
+import './css/style.css';
+import './css/form.css';
+import './css/table.css';
 import form from './form/form.js';
-import factory from './factory.js';
 import push from './push.js';
 import storage from './storage.js';
 
@@ -8,9 +9,9 @@ import storage from './storage.js';
 let table = {
     tableDiv: document.createElement(`table`),
     init: () => {
+        table.tableDiv.className = `table`;
         storage.getset();
         table.tableHeaders();
-        table.tableDiv.className = `table`;
         document.body.append(form, table.tableDiv);
         push();
     },
@@ -19,7 +20,9 @@ let table = {
         let due = document.createElement(`th`);
         let desc = document.createElement(`th`);
         let priority = document.createElement(`th`);
-            due.textContent = `Due`;
+        due.style.width = `7rem`;
+        priority.style.width = `5rem`;
+        due.textContent = `Due`;
             desc.textContent = `Description`;
             priority.textContent = `Priority`;
         row.append(due, desc, priority);

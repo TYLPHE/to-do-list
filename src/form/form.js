@@ -2,9 +2,6 @@ import calendar from './calendar.js';
 import desc from './desc.js';
 import submit from './submit.js';
 import priority from './priority.js';
-import factory from '../factory.js';
-import push from '../push.js';
-import storage from '../storage.js';
 
 let form = {
     formDiv: document.createElement(`form`),

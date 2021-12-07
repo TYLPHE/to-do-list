@@ -1,3 +1,6 @@
+import factory from '../factory.js';
+import storage from '../storage.js';
+import push from '../push.js';
 let submit = {
     submit: () => {
         let submit = document.createElement(`button`);
@@ -16,9 +19,9 @@ let submit = {
                     else{
                         priority = document.querySelector(`input[name="radio"]:checked`).id;
                     }
-                console.log(due, desc, priority);
                 if(due && desc){
                     let submit = factory(due, desc, priority);
+                    storage.sort();
                     storage.storage.push(submit);
                     storage.save();
                     push();

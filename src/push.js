@@ -2,11 +2,11 @@ import storage from './storage.js';
 
 //push populates table
 export default function push(){
-    //remove all lists
+    //remove all list items
     while(document.querySelector(`.list`)){
         document.querySelector(`.table`).removeChild(document.querySelector(`.list`));
     }
-    //read array and draw new list
+    //read array, draw new list, add id to highlight last added item
     for(let i = 0; i < storage.storage.length; i++){
         let row = document.createElement(`tr`);
         row.classList.add(`list`);;
@@ -37,12 +37,11 @@ export default function push(){
             priority.textContent = storage.storage[i].priority;
 
         row.append(due, desc, priority);
-        row.id = i;
+        row.id = storage.storage[i].id;
 
         let table = document.querySelector(`.table`);
             table.appendChild(row);
-    }
-    console.log(storage.storage.length - 1)
-    let lastAdded = document.getElementById(storage.storage.length - 1);
+        }
+    let lastAdded = document.getElementById(storage.id);
     lastAdded.classList.add(`last-added`);
 }

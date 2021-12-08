@@ -13,6 +13,9 @@ export default function push(){
         let due = document.createElement(`td`);
         let desc = document.createElement(`td`);
         let priority = document.createElement(`td`);
+            due.classList.add(`due-${i+1}`);
+            desc.classList.add(`desc-${i+1}`);
+            priority.classList.add(`priority-${i+1}`);
             due.style.textAlign = `center`;
             desc.style.textAlign = `justify`;
             priority.style.textAlign = `center`;
@@ -23,8 +26,8 @@ export default function push(){
                 let date = storage.storage[i].due;
                 date = date.slice(0, 10);
                 //flip yyyy-dd-mm to mm-dd-yyyy lol
-                let mm = date.slice(8);
-                let dd = date.slice(5, 7);
+                let dd = date.slice(8);
+                let mm = date.slice(5, 7);
                 let yy = date.slice(0, 4);
                 date = `${mm}-${dd}-${yy}`;
                 //slice out time from date

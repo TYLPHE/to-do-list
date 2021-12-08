@@ -4,6 +4,7 @@ import './css/table.css';
 import form from './form/form.js';
 import push from './push.js';
 import storage from './storage.js';
+import rowOptions from './rowOptions.js';
 
 //table - create div to populate to do items.
 let table = {
@@ -14,6 +15,7 @@ let table = {
         table.tableHeaders();
         document.body.append(form, table.tableDiv);
         push();
+        rowOptions.hover();
     },
     tableHeaders: () => {
         let row = document.createElement(`tr`);

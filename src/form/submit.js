@@ -21,8 +21,8 @@ let submit = {
                     }
                 if(due && desc){
                     let submit = factory(due, desc, priority);
-                    storage.sort();
                     storage.storage.push(submit);
+                    storage.sort();
                     storage.save();
                     push();
                 }

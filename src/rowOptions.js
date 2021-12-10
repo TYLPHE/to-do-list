@@ -1,23 +1,25 @@
-import storage from "./storage.js";
-
 let options = {
-    addListener: () => {
+    init: () => {
         let listLength = document.getElementsByClassName(`list`).length;
-        for(let i = 1; i <= listLength; i++){
-            let row = document.getElementById(i);
-            row.addEventListener(`mouseover`, (e) => {
-                let options = document.createElement(`div`);
-                options.id = `options`
-                options.textContent = `Buttons`;
-                if(e.target.parentNode.childNodes[1].childElementCount == 0 && e.target.id !== `options`){
-                    e.target.parentNode.childNodes[1].appendChild(options);
-                }
-                document.querySelector(`due-${i}`);
-                console.log(e);
-            })
+        for(let i = 0; i < listLength; i++){
+            let optionsDiv = document.querySelector(`.options-${i+1}`);
+
+            let completeButton = document.createElement(`button`);
+            let editButton = document.createElement(`button`);
+            let deleteButton = document.createElement(`button`);
+
+            completeButton.className = `complete`;
+            editButton.className = `edit`;
+            deleteButton.className = `delete`;
+
+            completeButton.textContent = `Complete`;
+            editButton.textContent = `Edit`;
+            deleteButton.textContent = `Delete`;
+
+
+            optionsDiv.append(completeButton, editButton, deleteButton);
         }
     },
-
 }
 
 export default options;

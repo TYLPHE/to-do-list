@@ -1,6 +1,8 @@
 table{
-    padding: 15px;
+    table-layout: fixed;
+    padding: 1rem;
     width: 100%;
+    height: 100%;
     border: 5px solid black;
 }
 .last-added{
@@ -15,6 +17,27 @@ th{
 td{
     border: 1px solid black;
     padding: 0 .5rem;
+}
+.due, .priority{
+    text-align: center;
+}
+.desc{
+    text-align: justify;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    gap: .2rem;
+}
+.complete, .edit, .delete{
+    width: 5rem;
+    background-color: transparent;
+}
+.complete:hover, .edit:hover, .delete:hover{
+    font-weight: bold;
 }
 @keyframes row-bg {
     0%{

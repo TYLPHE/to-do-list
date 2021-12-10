@@ -1,4 +1,6 @@
 import storage from './storage.js';
+import rowOptions from './rowOptions.js';
+import options from './rowOptions.js';
 
 //push populates table
 export default function push(){
@@ -7,18 +9,18 @@ export default function push(){
         document.querySelector(`.table`).removeChild(document.querySelector(`.list`));
     }
     //read array, draw new list, add id to highlight last added item
+    console.log(storage.storage);
     for(let i = 0; i < storage.storage.length; i++){
         let row = document.createElement(`tr`);
         row.classList.add(`list`);;
         let due = document.createElement(`td`);
         let desc = document.createElement(`td`);
         let priority = document.createElement(`td`);
-            due.classList.add(`due-${i+1}`);
-            desc.classList.add(`desc-${i+1}`);
-            priority.classList.add(`priority-${i+1}`);
-            due.style.textAlign = `center`;
-            desc.style.textAlign = `justify`;
-            priority.style.textAlign = `center`;
+        let options = document.createElement(`td`);
+            due.className = `due-${storage.storage[i].id} due`;
+            desc.className = `desc-${storage.storage[i].id} desc`;
+            priority.className = `priority-${storage.storage[i].id} priority`;
+            options.className = `options-${storage.storage[i].id} options`;
             due.textContent = dateSplitter();
             
             function dateSplitter(){
@@ -39,7 +41,7 @@ export default function push(){
             desc.textContent = storage.storage[i].desc;
             priority.textContent = storage.storage[i].priority;
 
-        row.append(due, desc, priority);
+        row.append(due, desc, priority, options);
         row.id = storage.storage[i].id;
 
         let table = document.querySelector(`.table`);
@@ -47,4 +49,5 @@ export default function push(){
         }
     let lastAdded = document.getElementById(storage.id);
     lastAdded.classList.add(`last-added`);
+    options.init();
 }

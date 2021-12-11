@@ -16,11 +16,11 @@ span{
 }
 
 /*description css*/
-.desc{
+.form-desc{
     border: 1px solid black;
     padding: .3rem;
 }
-.desc:hover{
+.form-desc:hover{
     background-color: rgba(0, 0, 0, 0.068);
     transition: 100ms;
 }
@@ -68,11 +68,11 @@ input:valid+span:after {
 }
 
 /*priority css*/
-.priority{
+.form-priority{
     border: 1px solid black;
     padding: .3rem;
 }
-.priority:hover{
+.form-priority:hover{
     background-color: rgba(0, 0, 0, 0.068);
     transition: 100ms;
 }

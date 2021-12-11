@@ -1,6 +1,6 @@
 export default function desc(){
     let desc = document.createElement(`div`);
-        desc.className = `desc`;
+        desc.className = `form-desc`;
     let label = document.createElement(`label`);
         label.textContent = `Description:`;
         label.for = `text`

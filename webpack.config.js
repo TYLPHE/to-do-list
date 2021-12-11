@@ -4,16 +4,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: "development",    
     entry: {
-        storage: './src/storage.js',
+        storage: './src/storage/storage.js',
         index: './src/index.js',
-        factory: './src/factory.js',
-        push: './src/push.js',
+        factory: './src/storage/factory.js',
+        push: './src/table/push.js',
         desc: './src/form/desc.js',
         form: './src/form/form.js',
         calendar: './src/form/calendar.js',
         priority: './src/form/priority.js',
         submit: './src/form/submit.js',
-        rowOptions: './src/rowOptions.js',
+        rowOptions: './src/table/rowOptions.js',
     },
     plugins: [
     new HtmlWebpackPlugin({

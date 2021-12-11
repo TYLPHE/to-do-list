@@ -8,9 +8,12 @@ let storage = {
             localStorage.setItem(`todo-TYLPHE`, []);
 
             //prepopulate some items and push it to table
-            let schedule1 = factory(`2021-11-01T03:15`, `Pay bills`, `Medium`);
-            let schedule2 = factory(`2021-10-01T14:15`,`Laundry`, ``);
-            let schedule3 = factory(`2021-12-01T23:15`, `Codin Project`, `High`);
+            let tomorrow = `${new Date().getFullYear()}-${new Date().getMonth()+1}-28T12:00`;
+            let soon = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T` + new Date().getHours() + `:59`;
+            let overdue = `${new Date().getFullYear()}-01-01T` + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
+            let schedule1 = factory(tomorrow, `Pay bills`, `High`);
+            let schedule2 = factory(soon,`Laundry`, `Low`);
+            let schedule3 = factory(overdue, `Party`, `Medium`);
             storage.storage.push(schedule1);
             storage.storage.push(schedule2);
             storage.storage.push(schedule3);
@@ -18,7 +21,6 @@ let storage = {
             //create another file to remember ID number for generation
             localStorage.setItem(`todo-id-TYLPHE`, 0);
     
-            console.log(storage.id);
             storage.save();
         }
         else{
@@ -34,7 +36,6 @@ let storage = {
         let id = JSON.stringify(storage.id);
         localStorage.setItem(`todo-TYLPHE`, save);
         localStorage.setItem(`todo-id-TYLPHE`, id);
-        console.log(`saved`);
     },
     sort: () => {
         storage.storage.sort(

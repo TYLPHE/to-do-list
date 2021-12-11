@@ -5,6 +5,16 @@ table{
     height: 100%;
     border: 5px solid black;
 }
+.header-due{
+    width: 7rem;
+}
+.header-priority, .header-options{
+    width: 5rem;
+}
+/* 
+due.style.width = `7rem`;
+priority.style.width = `5rem`;
+options.style.width = `5rem` */
 .last-added{
     animation: row-bg 3s;
 }
@@ -38,6 +48,9 @@ td{
 }
 .complete:hover, .edit:hover, .delete:hover{
     font-weight: bold;
+}
+.overdue{
+    color: red;
 }
 @keyframes row-bg {
     0%{

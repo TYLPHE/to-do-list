@@ -2,8 +2,8 @@ import './css/style.css';
 import './css/form.css';
 import './css/table.css';
 import form from './form/form.js';
-import push from './push.js';
-import storage from './storage.js';
+import push from './table/push.js';
+import storage from './storage/storage.js';
 
 //table - create div to populate to do items.
 let table = {
@@ -21,13 +21,13 @@ let table = {
         let desc = document.createElement(`th`);
         let priority = document.createElement(`th`);
         let options = document.createElement(`th`);
-        due.style.width = `7rem`;
-        priority.style.width = `5rem`;
-        options.style.width = `5rem`
+        due.className = `header-due`;
+        priority.className = `header-priority`;
+        options.className = `header-options`;
         due.textContent = `Due`;
         desc.textContent = `Description`;
         priority.textContent = `Priority`;
-        options.textContent = `Options`
+        options.textContent = `Options`;
         row.append(due, desc, priority, options);
         table.tableDiv.append(row);
     },

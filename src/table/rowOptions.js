@@ -22,4 +22,4 @@ let options = {
     },
 }
 
-export default options;
+export default options.init;

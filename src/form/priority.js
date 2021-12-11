@@ -1,6 +1,6 @@
 export default function priority(){
     let priority = document.createElement(`div`);
-        priority.className = `priority`;
+        priority.className = `form-priority`;
     let priorityLabel = document.createElement(`label`);
         priorityLabel.for = `priority`;
         priorityLabel.textContent = `Priority: `;

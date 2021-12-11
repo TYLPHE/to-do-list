@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/rowOptions.js":
-/*!***************************!*\
-  !*** ./src/rowOptions.js ***!
-  \***************************/
+/***/ "./src/table/rowOptions.js":
+/*!*********************************!*\
+  !*** ./src/table/rowOptions.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet options = {\n    init: () => {\n        let listLength = document.getElementsByClassName(`list`).length;\n        for(let i = 0; i < listLength; i++){\n            let optionsDiv = document.querySelector(`.options-${i+1}`);\n\n            let completeButton = document.createElement(`button`);\n            let editButton = document.createElement(`button`);\n            let deleteButton = document.createElement(`button`);\n\n            completeButton.className = `complete`;\n            editButton.className = `edit`;\n            deleteButton.className = `delete`;\n\n            completeButton.textContent = `Complete`;\n            editButton.textContent = `Edit`;\n            deleteButton.textContent = `Delete`;\n\n\n            optionsDiv.append(completeButton, editButton, deleteButton);\n        }\n    },\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (options);\n\n//# sourceURL=webpack://to-do-list/./src/rowOptions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nlet options = {\n    init: () => {\n        let listLength = document.getElementsByClassName(`list`).length;\n        for(let i = 0; i < listLength; i++){\n            let optionsDiv = document.querySelector(`.options-${i+1}`);\n\n            let completeButton = document.createElement(`button`);\n            let editButton = document.createElement(`button`);\n            let deleteButton = document.createElement(`button`);\n\n            completeButton.className = `complete`;\n            editButton.className = `edit`;\n            deleteButton.className = `delete`;\n\n            completeButton.textContent = `Complete`;\n            editButton.textContent = `Edit`;\n            deleteButton.textContent = `Delete`;\n\n\n            optionsDiv.append(completeButton, editButton, deleteButton);\n        }\n    },\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (options.init);\n\n//# sourceURL=webpack://to-do-list/./src/table/rowOptions.js?");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/rowOptions.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/table/rowOptions.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

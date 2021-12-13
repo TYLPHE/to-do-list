@@ -108,5 +108,11 @@ let push = {
         let compare = date.localeCompare(now)
         return compare;
     },
+    //change complete button to green if completed
+    markComplete: (i) => {
+        if(storage.storage.complete[i]){
+            console.log(storage.storage.complete[i]);
+        }
+    },
 }
 export default push.init;

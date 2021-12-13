@@ -8,6 +8,8 @@ function factory(due, desc, priority){
         due: due,
         desc: desc,
         priority: priority,
+        complete: false,
+        tag: ``,
     };
 }
 export default factory;

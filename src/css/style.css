@@ -1,6 +1,10 @@
+@font-face{
+    font-family: 'special-elite';
+    src: url('../font/SpecialElite-Regular.ttf');
+}
 *{
     border: 1px solid black; 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'special-elite', 'Courier New', Courier, monospace;
 }
 body{
     background-color: bisque;

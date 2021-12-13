@@ -49,8 +49,11 @@ td{
 .complete:hover, .edit:hover, .delete:hover{
     font-weight: bold;
 }
+.completed{
+    color: darkgray;
+}
 .overdue{
-    color: red;
+    color: rgb(192, 0, 0);
 }
 @keyframes row-bg {
     0%{

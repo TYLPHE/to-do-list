@@ -1,14 +1,26 @@
 import storage from '../storage/storage.js';
 
 let edited = {
+    init: (obj) => {
+        edited.remove();
+        edited.add(obj);
+    },
+    //change all last edited values to false
     remove: () => {
-        for(let key in storage.storage){
-            console.log(storage.storage[key]);
+        for(let i in storage.storage){
+            storage.storage[i].lastEdited = false;
         }
-        console.log()
     },
     add:(obj) => {
-        obj.edited = true;
+        obj.lastEdited = true;
+    },
+    //add a last edited to highlight last edited item
+    highlight: () => {
+        let targetObject = storage.storage.find(x => x.lastEdited);
+        if(targetObject){
+            let edited = document.getElementById(`${targetObject.id}`);
+            edited.classList.add(`last-edited`);
+        }
     }
 }
 

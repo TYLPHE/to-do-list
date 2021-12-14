@@ -2,6 +2,9 @@ import push from './push.js';
 import storage from '../storage/storage.js';
 let options = {
     init: () => {
+        options.addButtons();
+    },
+    addButtons: () => {
         let listLength = document.getElementsByClassName(`list`).length;
         for(let i = 0; i < listLength; i++){
             let optionsDiv = document.querySelector(`.options-${i+1}`);
@@ -27,9 +30,18 @@ let options = {
     },
     complete: (e) => {
         let targetObject = storage.storage.find(x => x.id === parseInt(e.target.parentNode.parentNode.id));
-        (targetObject.complete) ? targetObject.complete = false : targetObject.complete = true; 
-        console.log(storage.storage.find(x => x.id === parseInt(e.target.parentNode.parentNode.id)));
-
+        if(targetObject.complete){
+            targetObject.complete = false;
+            targetObject.lastEdited = true;
+            storage.save();
+            push();
+        }
+        else{
+            targetObject.complete = true;
+            targetObject.lastEdited = true;
+            storage.save();
+            push();
+        }
     },
     edit: (e) => {
         console.log(e.target.parentNode.parentNode.id);

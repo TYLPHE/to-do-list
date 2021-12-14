@@ -6,7 +6,7 @@ let push = {
     init: () => {
         push.removeRows();
         push.addRows();
-        push.lastAdded();
+        push.lastEdited();
         options();
     },
     //remove all the rows in table
@@ -29,7 +29,6 @@ let push = {
                 priority.className = `priority-${storage.storage[i].id} priority`;
                 options.className = `options-${storage.storage[i].id} options`;
                 due.textContent = push.dateSplitter(i);
-                push.overdue(row, due, i);
                 desc.textContent = storage.storage[i].desc;
                 priority.textContent = storage.storage[i].priority;
             row.append(due, desc, priority, options);
@@ -37,6 +36,12 @@ let push = {
 
             let table = document.querySelector(`.table`);
                 table.appendChild(row);
+            
+            //search array for overdue tasks and mark them red and overdue
+            push.overdue(row, due, i);
+
+            //search array for completed items and cross them out
+            push.markComplete(row, due, desc, i);
         }
     },
     //convert the Date().toISOString() to a more friendly format
@@ -93,25 +98,37 @@ let push = {
             return `${time} AM`;
         }
     },
-    //add a last added to highlight freshly submitted form
-    lastAdded: () => {
-        let lastAdded = document.getElementById(storage.id);
-        lastAdded.classList.add(`last-added`);
+    //add a last edited to highlight last edited item
+    lastEdited: () => {
+        let lastEdited = document.getElementById(storage.id);
+        lastEdited.classList.add(`last-edited`);
     },
     //update current time to properly mark overdue lists.
     currentTime: () => {
         let now = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T`  + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
         return now;
     },
-    //run function to update compare values each refresh
+    //compare date values for overdue function
     compare: (date, now) => {
         let compare = date.localeCompare(now)
         return compare;
     },
     //change complete button to green if completed
-    markComplete: (i) => {
-        if(storage.storage.complete[i]){
-            console.log(storage.storage.complete[i]);
+    markComplete: (row, due, desc, i) => {
+        if(storage.storage[i].complete){
+            //remove the overdue text
+            if(due.lastChild.textContent === `(Overdue)`){
+                due.removeChild(due.lastChild);
+            }
+            //remove the red overdue class
+            if(row.classList.contains(`overdue`)){
+                row.classList.remove(`overdue`);
+            }
+            desc.classList.add(`completed`);
+            let complete = document.createElement(`div`);
+            complete.textContent = `(Complete)`;
+            due.appendChild(complete);
+            row.classList.add(`completed`);
         }
     },
 }

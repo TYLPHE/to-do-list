@@ -32,7 +32,7 @@ textarea{
 }
 textarea:invalid+span:after {
     content: '✖';
-    color: red;
+    color: rgb(214, 0, 0);
     margin: 5px;
 }
 textarea:valid+span:after {

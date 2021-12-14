@@ -14,6 +14,7 @@ module.exports = {
         priority: './src/form/priority.js',
         submit: './src/form/submit.js',
         rowOptions: './src/table/rowOptions.js',
+        lastEdited: './src/table/lastEdited.js',
     },
     plugins: [
     new HtmlWebpackPlugin({

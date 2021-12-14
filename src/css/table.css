@@ -15,7 +15,7 @@ table{
 due.style.width = `7rem`;
 priority.style.width = `5rem`;
 options.style.width = `5rem` */
-.last-added{
+.last-edited{
     animation: row-bg 3s;
 }
 tr:hover{
@@ -23,6 +23,7 @@ tr:hover{
 }
 th{
     border: 1px solid black;
+    padding-top: .25rem;
 }
 td{
     border: 1px solid black;
@@ -43,17 +44,21 @@ td{
     gap: .2rem;
 }
 .complete, .edit, .delete{
+    color:inherit;
     width: 5rem;
     background-color: transparent;
+    border: 1px solid black;
+    padding-top: .25rem;
 }
 .complete:hover, .edit:hover, .delete:hover{
     font-weight: bold;
 }
 .completed{
-    color: darkgray;
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.288)
 }
 .overdue{
-    color: rgb(192, 0, 0);
+    color: rgb(214, 0, 0);
 }
 @keyframes row-bg {
     0%{

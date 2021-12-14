@@ -10,6 +10,7 @@ function factory(due, desc, priority){
         priority: priority,
         complete: false,
         tag: ``,
+        lastEdited: false,
     };
 }
 export default factory;

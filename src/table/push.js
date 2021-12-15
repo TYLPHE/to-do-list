@@ -1,13 +1,14 @@
 import storage from '../storage/storage.js';
 import options from './rowOptions.js';
+import lastEdited from './lastEdited.js';
 
 //push populates table
 let push = {
     init: () => {
         push.removeRows();
         push.addRows();
-        push.lastEdited();
         options();
+        lastEdited.highlight();
     },
     //remove all the rows in table
     removeRows: () => {
@@ -95,13 +96,8 @@ let push = {
             return `12:${mm} AM`;
         }
         else{
-            return `${time} AM`;
+            return `${hh-0}:${mm} AM`;
         }
-    },
-    //add a last edited to highlight last edited item
-    lastEdited: () => {
-        let lastEdited = document.getElementById(storage.id);
-        lastEdited.classList.add(`last-edited`);
     },
     //update current time to properly mark overdue lists.
     currentTime: () => {

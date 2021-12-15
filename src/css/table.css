@@ -11,15 +11,11 @@ table{
 .header-priority, .header-options{
     width: 5rem;
 }
-/* 
-due.style.width = `7rem`;
-priority.style.width = `5rem`;
-options.style.width = `5rem` */
 .last-edited{
-    animation: row-bg 3s;
+    animation: blinker .3s;
 }
 tr:hover{
-    background-color: rgba(0, 0, 0, 0.068);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 th{
     border: 1px solid black;
@@ -60,13 +56,23 @@ td{
 .overdue{
     color: rgb(214, 0, 0);
 }
-@keyframes row-bg {
+@keyframes blinker {
     0%{
         
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.15);
     }
-    50%{
-        background-color: rgba(0, 0, 0, 0.25);
+    20%{
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    40%{
+        
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    60%{
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    80%{
+        background-color: rgba(0, 0, 0, 0.15);
     }
     100%{
         background-color: none;

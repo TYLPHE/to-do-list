@@ -15,7 +15,6 @@ let table = {
         table.tableHeaders();
         document.body.append(form, table.tableDiv);
         push();
-        lastEdited.remove();
     },
     tableHeaders: () => {
         let row = document.createElement(`tr`);

@@ -21,8 +21,7 @@ span{
     padding: .3rem;
 }
 .form-desc:hover{
-    background-color: rgba(0, 0, 0, 0.068);
-    transition: 100ms;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 .text-div{
     display: flex;
@@ -48,8 +47,7 @@ textarea:valid+span:after {
     margin: .15rem 0;
 }
 .calendar:hover{
-    background-color: rgba(0, 0, 0, 0.068);
-    transition: 100ms;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 #end{
     text-align: center;
@@ -73,8 +71,7 @@ input:valid+span:after {
     padding: .3rem;
 }
 .form-priority:hover{
-    background-color: rgba(0, 0, 0, 0.068);
-    transition: 100ms;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 .radio{
     display: flex;

@@ -10,6 +10,8 @@ export default function desc(){
         textBox.className = `text`;
         textBox.id = `text`;
         textBox.required = true;
+        textBox.autocapitalize = `sentences`;
+        textBox.spellcheck = true;
         textBox.placeholder = `Get booster shot`;
     let span = document.createElement(`span`);
         span.class = `validity`;

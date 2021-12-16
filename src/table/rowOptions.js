@@ -1,7 +1,7 @@
 import push from './push.js';
 import storage from '../storage/storage.js';
 import lastEdited from './lastEdited.js';
-import { endOfDay } from 'date-fns';
+
 let options = {
     init: () => {
         options.addButtons();
@@ -50,25 +50,21 @@ let options = {
         let targetObject = e.target.parentNode.parentNode.id;
         let storageObject = storage.storage.find(x => x.id === parseInt(targetObject));
 
-        // storage.storage.splice(storage.storage.indexOf(storageObject), 1);
-        lastEdited.remove();
-        storage.save();
-        push();
-
         let due = storageObject.due;
         let desc = storageObject.desc;
         let priority = storageObject.priority;
-        
-        console.log(due);
-        console.log(desc);
-        console.log(priority);
 
         let dueInput = document.getElementById(`end`);
         dueInput.value = due;
         let textArea = document.getElementById(`text`);
         textArea.defaultValue = desc;
+        let priorityInput = document.getElementById(priority);
+        priorityInput.checked = true;
 
-        // console.log(e.target.parentNode.parentNode.id);
+        options.delete(e);
+
+        let form = document.getElementById(`form`);
+        form.classList.add(`last-edited`);
     },
     //delete object from storage and redraw table
     delete: (e) => {

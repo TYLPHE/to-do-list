@@ -1,6 +1,7 @@
 import factory from '../storage/factory.js';
 import storage from '../storage/storage.js';
 import push from '../table/push.js';
+import lastEdited from '../table/lastEdited.js';
 let submit = {
     submit: () => {
         let submit = document.createElement(`button`);
@@ -20,16 +21,21 @@ let submit = {
                         priority = document.querySelector(`input[name="radio"]:checked`).id;
                     }
                 if(due && desc){
+                    let form = document.getElementById(`form`);
+                    if(form.className = `last-edited`){
+                        form.className = ``;
+                    }
                     let submit = factory(due, desc, priority);
                     storage.storage.push(submit);
                     storage.sort();
                     storage.save();
+                    lastEdited.init(submit);
                     push();
                 }
-                else{console.log(`error`)};
+                else{console.log(`submit error`)};
             }
         return submit;
-    }  
+    },
 }
 
 export default submit;

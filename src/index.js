@@ -4,7 +4,6 @@ import './css/table.css';
 import form from './form/form.js';
 import push from './table/push.js';
 import storage from './storage/storage.js';
-import lastEdited from './table/lastEdited.js';
 
 //table - create div to populate to do items.
 let table = {

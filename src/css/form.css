@@ -82,6 +82,27 @@ input:valid+span:after {
     font-weight: 600;
 }
 
+/*tag css*/
+.tag{
+    margin: .15rem 0;
+    padding: .3rem;
+    gap: .15rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.tag-div{
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+
+}
+.tag-color{
+    display: flex;
+    border: 1px solid black;
+    width: 100%;
+}
+
 /*submit button css*/
 .submit{
     padding: .2rem 2rem;

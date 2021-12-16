@@ -12,9 +12,11 @@ module.exports = {
         form: './src/form/form.js',
         calendar: './src/form/calendar.js',
         priority: './src/form/priority.js',
+        tag: './src/form/tag.js',
         submit: './src/form/submit.js',
         rowOptions: './src/table/rowOptions.js',
         lastEdited: './src/table/lastEdited.js',
+        tab: './src/table/tabs.js',
     },
     plugins: [
     new HtmlWebpackPlugin({

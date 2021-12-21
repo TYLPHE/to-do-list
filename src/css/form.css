@@ -1,11 +1,11 @@
 /*general form css*/
 form{
+    margin: .5rem;
     padding: 1rem;
     border: 5px solid black;
     min-width: 16rem;
 }
 .form-title{
-    font-weight: bold;
     text-align: center;
 }
 label {
@@ -13,6 +13,9 @@ label {
 }
 span{
     margin: auto 0;
+}
+input{
+    cursor: pointer;
 }
 
 /*description css*/
@@ -77,9 +80,16 @@ input:valid+span:after {
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
+    height: 1.2rem;
+    transition: 100ms;
 }
 .radio:hover{
-    font-weight: 600;
+    font-size: 1.2rem;
+    transition: 100ms;
+    cursor: pointer;
+}
+.Low, .Medium, .High{
+    padding: .1rem 0;
 }
 
 /*tag css*/
@@ -91,16 +101,19 @@ input:valid+span:after {
     flex-direction: column;
     border: 1px solid black;
 }
+.tag:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
 .tag-div{
     display: flex;
     align-items: center;
     margin: 0 20px;
-
 }
 .tag-color{
     display: flex;
     border: 1px solid black;
     width: 100%;
+    cursor: pointer;
 }
 
 /*submit button css*/

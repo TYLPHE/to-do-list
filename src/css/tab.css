@@ -1,0 +1,25 @@
+.tab-div{
+    display: flex;
+    justify-content: center;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding-top: .25rem;
+    /* background-color: #ddedee; */
+}
+.tab-1, .tab-2, .tab-3, .tab-4, .tab-5{
+    clip-path: polygon(8% 0, 92% 0, 95% 15%, 97% 89%, 100% 100%, 0 100%, 3% 89%, 5% 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: .25rem;
+    border-radius: 20px 20px 0 0;
+    transition: 100ms;
+}
+.tab-1:hover, .tab-2:hover, .tab-3:hover, .tab-4:hover, .tab-5:hover{
+    width: 120%;
+    font-size: 1.8rem;
+    padding-top: .25rem;
+    transition: 100ms;
+    cursor: pointer;
+}

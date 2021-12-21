@@ -3,12 +3,41 @@
     src: url('../font/SpecialElite-Regular.ttf');
 }
 *{
-    /* border: 1px solid black;  */
     font-family: 'special-elite', 'Courier New', Courier, monospace;
+    font-weight: bolder;
 }
 body{
     background-color: bisque;
     margin: 0;
     display: flex;
-    color:rgba(22, 22, 22, 0.959)
+}
+.main-div{
+    margin: .5rem;
+}
+.avatar{
+    border-radius: 50%;
+    height: 2rem;
+    border: 1px solid black;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .1rem;
+    margin: .5rem;
+    min-width: 16rem;
+    text-align: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 100ms;
+}
+.title:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+    font-size: 1.4rem;
+    transition: 100ms;
+}
+.title-text{
+    padding-top: .25rem;
 }

@@ -1,23 +1,38 @@
 let tag = {
     tagDiv: document.createElement(`div`),
-    tag1: `#e63946`,
-    tag2: `#f1faee`,
-    tag3: `#a8dadc`,
-    tag4: `#457b9d`,
-    tag5: `#1d3557`,
+    tag1Color: `#e63946`,
+    tag1Text: `All`,
+    tag1Class: `tab-1`,
+
+    tag2Color: `#f1faee`,
+    tag2Text: ``,
+    tag2Class: `tab-2`,
+
+    tag3Color: `#a8dadc`,
+    tag3Text: ``,
+    tag3Class: `tab-3`,
+
+    tag4Color: `#457b9d`,
+    tag4Text: ``,
+    tag4Class: `tab-4`,
+
+    tag5Color: `#1d3557`,
+    tag5Text: ``,
+    tag5Class: `tab-5`,
+
     init: () => {
         let title = document.createElement(`div`);
         title.textContent = `Tag Color:`
         tag.tagDiv.appendChild(title);
         tag.tagDiv.className = `tag`;
-        tag.addTag(tag.tag1);
-        tag.addTag(tag.tag2);
-        tag.addTag(tag.tag3);
-        tag.addTag(tag.tag4);
-        tag.addTag(tag.tag5);
+        // tag.addTag(tag.tag1Color, tag.tag1Color);
+        tag.addTag(tag.tag2Color, tag.tag2Class);
+        tag.addTag(tag.tag3Color, tag.tag3Class);
+        tag.addTag(tag.tag4Color, tag.tag4Class);
+        tag.addTag(tag.tag5Color, tag.tag5Class);
         return tag.tagDiv;
     },
-    addTag: (color) => {
+    addTag: (color, value) => {
         let checkboxDiv = document.createElement(`div`);
         checkboxDiv.className = `tag-div`;
         let label = document.createElement(`label`);
@@ -28,6 +43,7 @@ let tag = {
         checkbox.type = `checkbox`;
         checkbox.name = `tag`;
         checkbox.id = color;
+        checkbox.value = value;
         label.appendChild(checkbox);
         checkboxDiv.append(label);
         tag.tagDiv.appendChild(checkboxDiv);

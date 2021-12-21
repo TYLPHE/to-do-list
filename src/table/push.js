@@ -1,8 +1,6 @@
 import storage from '../storage/storage.js';
 import options from './rowOptions.js';
 import lastEdited from './lastEdited.js';
-import tabs from './tabs.js';
-
 //push populates table
 let push = {
     init: () => {
@@ -37,8 +35,7 @@ let push = {
             row.id = storage.storage[i].id;
 
             let table = document.querySelector(`.table`);
-                table.appendChild(tabs.init());
-                table.appendChild(row);
+            table.appendChild(row);
             
             //search array for overdue tasks and mark them red and overdue
             push.overdue(row, due, i);

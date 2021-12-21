@@ -20,6 +20,14 @@ let submit = {
                     else{
                         priority = document.querySelector(`input[name="radio"]:checked`).id;
                     }
+                let tag = ``;
+                    if(document.querySelector(`input[name="tag"]:checked`) == null){
+                        tag = ``;
+                    }
+                    else{
+                        tag = document.querySelector(`input[name="tag"]:checked`).value;
+                    }
+                console.log(tag);
                 if(due && desc){
                     let form = document.getElementById(`form`);
                     if(form.className = `last-edited`){

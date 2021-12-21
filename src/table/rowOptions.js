@@ -15,9 +15,9 @@ let options = {
             let editButton = document.createElement(`button`);
             let deleteButton = document.createElement(`button`);
 
-            completeButton.className = `complete`;
-            editButton.className = `edit`;
-            deleteButton.className = `delete`;
+            completeButton.className = `option-button complete`;
+            editButton.className = `option-button edit`;
+            deleteButton.className = `option-button delete`;
 
             completeButton.textContent = `Complete`;
             editButton.textContent = `Edit`;

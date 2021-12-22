@@ -1,12 +1,15 @@
 /*general form css*/
 form{
     margin: .5rem;
-    padding: 1rem;
-    border: 5px solid black;
+    padding: 0 1rem;
+    border: 10px solid #190b30cb;
     min-width: 16rem;
 }
 .form-title{
     text-align: center;
+    font-size: 1.3rem;
+    margin: .5rem;
+    padding-top: .25rem;
 }
 label {
     display: block;
@@ -20,7 +23,7 @@ input{
 
 /*description css*/
 .form-desc{
-    border: 1px solid black;
+    border: 1px solid #190b30cb;
     padding: .3rem;
 }
 .form-desc:hover{
@@ -45,7 +48,7 @@ textarea:valid+span:after {
 
 /*date css*/
 .calendar{
-    border: 1px solid black;
+    border: 1px solid #190b30cb;
     padding: .3rem;
     margin: .15rem 0;
 }
@@ -70,7 +73,7 @@ input:valid+span:after {
 
 /*priority css*/
 .form-priority{
-    border: 1px solid black;
+    border: 1px solid #190b30cb;
     padding: .3rem;
 }
 .form-priority:hover{
@@ -79,17 +82,19 @@ input:valid+span:after {
 .radio{
     display: flex;
     justify-content: space-between;
+    padding-top: .25rem;
     margin: 0 20px;
     height: 1.2rem;
     transition: 100ms;
 }
 .radio:hover{
+    padding-top: .25rem;
     font-size: 1.2rem;
     transition: 100ms;
     cursor: pointer;
 }
-.Low, .Medium, .High{
-    padding: .1rem 0;
+#Low, #Medium, #High{
+    margin: 0 .3rem auto auto;
 }
 
 /*tag css*/
@@ -99,7 +104,7 @@ input:valid+span:after {
     gap: .15rem;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid #190b30cb;
 }
 .tag:hover{
     background-color: rgba(0, 0, 0, 0.15);
@@ -111,14 +116,18 @@ input:valid+span:after {
 }
 .tag-color{
     display: flex;
-    border: 1px solid black;
+    border: 1px solid #190b30cb;
     width: 100%;
     cursor: pointer;
+    padding: .3rem;
+}
+#tab-2, #tab-3, #tab-4, #tab-5{
+    margin: auto 0 auto auto;
 }
 
 /*submit button css*/
 .submit{
-    padding: .2rem 2rem;
+    padding: .40rem 2rem .2rem 2rem;
     display: flex;
     margin: .5rem auto;
 }

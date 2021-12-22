@@ -53,6 +53,7 @@ let options = {
         let due = storageObject.due;
         let desc = storageObject.desc;
         let priority = storageObject.priority;
+        let tag = storageObject.tag;
 
         let dueInput = document.getElementById(`end`);
         dueInput.value = due;
@@ -60,6 +61,13 @@ let options = {
         textArea.defaultValue = desc;
         let priorityInput = document.getElementById(priority);
         priorityInput.checked = true;
+        let tagInput = document.getElementById(tag);
+        if(tagInput == null){
+            console.log(document.querySelector(`tag-color`));
+        }
+        else{
+            tagInput.checked = true;
+        }
 
         options.delete(e);
 

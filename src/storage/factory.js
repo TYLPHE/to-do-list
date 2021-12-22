@@ -1,7 +1,7 @@
 import storage from "./storage";
 
 //factory function to create to do contents
-function factory(due, desc, priority){
+function factory(due, desc, priority, tag){
     storage.id += 1;
     return {
         id: storage.id,
@@ -9,7 +9,7 @@ function factory(due, desc, priority){
         desc: desc,
         priority: priority,
         complete: false,
-        tag: ``,
+        tag: tag,
         lastEdited: false,
     };
 }

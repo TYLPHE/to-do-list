@@ -8,17 +8,20 @@ import storage from './storage/storage.js';
 import tabs from './table/tabs.js';
 //table - create div to populate to do items.
 let table = {
+    container: document.createElement(`div`),
     mainDiv: document.createElement(`div`),
     leftDiv: document.createElement(`div`),
     tableDiv: document.createElement(`table`),
     init: () => {
         storage.getset();
-        table.mainDiv.className = `main-div`;
-        table.tableDiv.className = `table`;
+        table.mainDiv.classList.add(`main-div`);
+        table.tableDiv.classList.add(`table`);
+        table.container.classList.add(`container`);
         table.tableDiv.appendChild(table.tableHeaders());
         table.mainDiv.append(tabs.init(), table.tableDiv);
         table.leftDiv.append(table.title(), form);
-        document.body.append(table.leftDiv, table.mainDiv);
+        table.container.append(table.leftDiv, table.mainDiv);
+        document.body.appendChild(table.container);
         push();
     },
     title: () => {
@@ -45,9 +48,10 @@ let table = {
         let desc = document.createElement(`th`);
         let priority = document.createElement(`th`);
         let options = document.createElement(`th`);
-        due.className = `header-due`;
-        priority.className = `header-priority`;
-        options.className = `header-options`;
+        due.classList.add(`due-header`);
+        desc.classList.add(`desc-header`);
+        priority.classList.add(`priority-header`);
+        options.classList.add(`options-header`);
         due.textContent = `Due`;
         desc.textContent = `Description`;
         priority.textContent = `Priority`;

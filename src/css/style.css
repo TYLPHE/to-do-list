@@ -7,9 +7,16 @@
     font-weight: bolder;
 }
 body{
-    background-color: bisque;
+    /* background-color: bisque; */
+    background-color: #fce8c8;
+    color: #190b30cb;
     margin: 0;
     display: flex;
+}
+.container{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
 }
 .main-div{
     margin: .5rem;
@@ -17,7 +24,7 @@ body{
 .avatar{
     border-radius: 50%;
     height: 2rem;
-    border: 1px solid black;
+    border: 1px solid 190b30cb;
 }
 .title{
     display: flex;
@@ -40,4 +47,7 @@ body{
 }
 .title-text{
     padding-top: .25rem;
+}
+.hidden{
+    display: none;
 }

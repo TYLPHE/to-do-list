@@ -11,13 +11,15 @@ let storage = {
             let tomorrow = `${new Date().getFullYear()}-${new Date().getMonth()+1}-28T12:00`;
             let soon = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T` + new Date().getHours() + `:59`;
             let overdue = `${new Date().getFullYear()}-01-01T` + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
-            let schedule1 = factory(tomorrow, `Pay bills`, `High`);
-            let schedule2 = factory(soon,`Laundry`, `Low`);
-            let schedule3 = factory(overdue, `Party`, `Medium`);
+            let schedule1 = factory(tomorrow, `Pay bills`, `High`, `tab-2`);
+            let schedule2 = factory(soon,`Laundry`, `Low`, `tab-3`);
+            let schedule3 = factory(overdue, `Party`, `Medium`, `tab-4`);
+            let schedule4 = factory(soon, `Drink water`, `Medium`, `tab-5`);
             storage.storage.push(schedule1);
             storage.storage.push(schedule2);
             storage.storage.push(schedule3);
-
+            storage.storage.push(schedule4);
+            console.table(storage.storage);
             //create another file to remember ID number for generation
             localStorage.setItem(`todo-id-TYLPHE`, 0);
     

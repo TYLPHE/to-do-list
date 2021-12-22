@@ -20,8 +20,21 @@ let tabs = {
         tab.addEventListener(`click`, (e) => tabs.tabSwap(e));
     },
     tabSwap: (e) => {
+        let bgColor = e.target.style.backgroundColor;
         let table = document.querySelector(`.table`);
-        table.style.border = `5px solid ${e.target.style.backgroundColor}`;
+        table.style.border = `10px solid ${bgColor}`;
+        //updating childNodes will update live. hide all and unhide what we need.
+        console.log(table.childNodes);
+        for(let i = 1; i < table.childNodes.length; i++){
+            table.childNodes[i].classList.add(`hidden`);
+        }
+        console.log(table.childNodes);
+        //search and unhide the tag clicked
+        let tagParent = document.querySelector(`#desc-${e.target.className}`).parentElement.parentElement
+        while(tagParent.classList.contains(`hidden`)){
+            tagParent.classList.remove(`hidden`);
+        }
+        console.log(document.querySelectorAll(`.hidden`));
     }
 };
 

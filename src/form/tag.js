@@ -33,20 +33,23 @@ let tag = {
         return tag.tagDiv;
     },
     addTag: (color, value) => {
-        let checkboxDiv = document.createElement(`div`);
-        checkboxDiv.className = `tag-div`;
+        let radioDiv = document.createElement(`div`);
+        radioDiv.className = `tag-div`;
         let label = document.createElement(`label`);
         label.className = `tag-color`;
-        label.for = color;
+        label.for = value;
         label.style.backgroundColor = color;
-        let checkbox = document.createElement(`input`);
-        checkbox.type = `checkbox`;
-        checkbox.name = `tag`;
-        checkbox.id = color;
-        checkbox.value = value;
-        label.appendChild(checkbox);
-        checkboxDiv.append(label);
-        tag.tagDiv.appendChild(checkboxDiv);
+        let radio = document.createElement(`input`);
+        radio.type = `radio`;
+        radio.name = `tag`;
+        radio.id = value;
+        radio.value = value;
+        if(value == tag.tag2Class){
+            radio.defaultChecked = true;
+        }
+        label.appendChild(radio);
+        radioDiv.append(label);
+        tag.tagDiv.appendChild(radioDiv);
     },
 };
 

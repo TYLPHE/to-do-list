@@ -1,6 +1,7 @@
 import storage from '../storage/storage.js';
 import options from './rowOptions.js';
 import lastEdited from './lastEdited.js';
+import tag from '../form/tag.js';
 //push populates table
 let push = {
     init: () => {
@@ -28,7 +29,7 @@ let push = {
                 desc.className = `desc-${storage.storage[i].id} desc`;
                 priority.className = `priority-${storage.storage[i].id} priority`;
                 options.className = `options-${storage.storage[i].id} options`;
-                due.textContent = push.dateSplitter(i);
+                due.innerText = push.dateSplitter(i);
                 desc.textContent = storage.storage[i].desc;
                 priority.textContent = storage.storage[i].priority;
             row.append(due, desc, priority, options);
@@ -36,7 +37,9 @@ let push = {
 
             let table = document.querySelector(`.table`);
             table.appendChild(row);
-            
+            //add a tag to the description div
+            desc.appendChild(push.addTag(i));
+
             //search array for overdue tasks and mark them red and overdue
             push.overdue(row, due, i);
 
@@ -108,7 +111,7 @@ let push = {
         let compare = date.localeCompare(now)
         return compare;
     },
-    //change complete button to green if completed
+    //cross out completed items
     markComplete: (row, due, desc, i) => {
         if(storage.storage[i].complete){
             //remove the overdue text
@@ -124,6 +127,34 @@ let push = {
             complete.textContent = `(Complete)`;
             due.appendChild(complete);
             row.classList.add(`completed`);
+        }
+    },
+    //add tag color to description box
+    addTag: (i) => {
+        let tagDiv = document.createElement(`div`);
+        tagDiv.classList.add(`table-tag`);
+        if(storage.storage[i].tag == tag.tag2Class){
+            tagDiv.id = `desc-${tag.tag2Class}`;
+            tagDiv.style.backgroundColor = tag.tag2Color;
+            return tagDiv;
+        }
+        else if(storage.storage[i].tag == tag.tag3Class){
+            tagDiv.id = `desc-${tag.tag3Class}`;
+            tagDiv.style.backgroundColor = tag.tag3Color;
+            return tagDiv;
+        }
+        else if(storage.storage[i].tag == tag.tag4Class){
+            tagDiv.id = `desc-${tag.tag4Class}`;
+            tagDiv.style.backgroundColor = tag.tag4Color;
+            return tagDiv;
+        }
+        else if(storage.storage[i].tag == tag.tag5Class){
+            tagDiv.id = `desc-${tag.tag5Class}`;
+            tagDiv.style.backgroundColor = tag.tag5Color;
+            return tagDiv;
+        }
+        else{
+            return;
         }
     },
 }

@@ -1,5 +1,5 @@
 import storage from '../storage/storage.js';
-
+//add a class to recently edited/added items to animate a blinking indicator
 let edited = {
     init: (obj) => {
         edited.remove();

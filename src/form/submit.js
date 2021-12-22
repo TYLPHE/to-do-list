@@ -33,7 +33,7 @@ let submit = {
                     if(form.className = `last-edited`){
                         form.className = ``;
                     }
-                    let submit = factory(due, desc, priority);
+                    let submit = factory(due, desc, priority, tag);
                     storage.storage.push(submit);
                     storage.sort();
                     storage.save();

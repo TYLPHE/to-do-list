@@ -2,6 +2,7 @@ import factory from '../storage/factory.js';
 import storage from '../storage/storage.js';
 import push from '../table/push.js';
 import lastEdited from '../table/lastEdited.js';
+import tabs from '../table/tabs.js';
 let submit = {
     submit: () => {
         let submit = document.createElement(`button`);
@@ -27,7 +28,6 @@ let submit = {
                     else{
                         tag = document.querySelector(`input[name="tag"]:checked`).value;
                     }
-                console.log(tag);
                 if(due && desc){
                     let form = document.getElementById(`form`);
                     if(form.className = `last-edited`){
@@ -39,8 +39,8 @@ let submit = {
                     storage.save();
                     lastEdited.init(submit);
                     push();
+                    tabs.tabSwap(storage.activeTab);
                 }
-                else{console.log(`submit error`)};
             }
         return submit;
     },

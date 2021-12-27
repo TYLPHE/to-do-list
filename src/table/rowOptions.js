@@ -1,6 +1,7 @@
 import push from './push.js';
 import storage from '../storage/storage.js';
 import lastEdited from './lastEdited.js';
+import tabs from './tabs.js';
 
 let options = {
     init: () => {
@@ -37,12 +38,14 @@ let options = {
             lastEdited.init(targetObject);
             storage.save();
             push();
+            tabs.tabSwap(storage.activeTab);
         }
         else{
             targetObject.complete = true;
             lastEdited.init(targetObject);
             storage.save();
             push();
+            tabs.tabSwap(storage.activeTab);
         }
     },
     //copy contents of row to form and then delete row
@@ -82,6 +85,7 @@ let options = {
         lastEdited.remove();
         storage.save();
         push();
+        tabs.tabSwap(storage.activeTab);
     },
 }
 

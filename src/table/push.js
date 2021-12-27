@@ -103,7 +103,7 @@ let push = {
     },
     //update current time to properly mark overdue lists.
     currentTime: () => {
-        let now = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T`  + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
+        let now = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T`  + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
         return now;
     },
     //compare date values for overdue function

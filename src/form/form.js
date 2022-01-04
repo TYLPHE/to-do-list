@@ -11,7 +11,7 @@ let form = {
         title.textContent = `Add To Do Item`;
         title.classList.add(`form-title`);
         form.formDiv.id = `form`;
-        form.formDiv.append(title, desc(), calendar, priority(), tag.init(), submit.submit());
+        form.formDiv.append(title, desc(), calendar.calendarDiv, priority(), tag.init(), submit.submit());
     },
 }
 form.init();

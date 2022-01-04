@@ -41,7 +41,7 @@ let tabs = {
         let table = document.querySelector(`.table`);
         for(let i = 1; i < table.childNodes.length; i++){
             table.childNodes[i].classList.add(`hidden`);
-            //tagID and targetID tries to match clicked class name to the stored tag value.
+            //tagID and targetID tries to match clicked class name to the stored tag value. unhide the matched values
             let tagID = table.childNodes[i].childNodes[1].childNodes[1].id;
             let targetID = `desc-${targetClass}`;
             if(tagID == targetID){

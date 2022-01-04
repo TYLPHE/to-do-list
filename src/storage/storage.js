@@ -17,13 +17,19 @@ let storage = {
             localStorage.setItem(`todo-TYLPHE`, []);
 
             //prepopulate some items and push it to table
-            let soon = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T` + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:59`;
-            let soon1 = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T` + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:51`;
-            let soon2 = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}T` + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:05`;
-            let tomorrow = `${new Date().getFullYear()}-${new Date().getMonth()+1}-28T12:00`;
-            let tomorrow1 = `${new Date().getFullYear()}-${new Date().getMonth()+1}-28T13:00`;
-            let overdue = `${new Date().getFullYear()}-01-01T` + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
-            let overdue1 = `${new Date().getFullYear()}-12-24T` + (new Date().getHours()<10?`0`:``) + new Date().getHours() + `:` + (new Date().getMinutes()<10?`0`:``) + new Date().getMinutes();
+            let currentYear = new Date().getFullYear();
+            let currentMonth = (new Date().getMonth() + 1 < 10 ? `0` : ``) + (new Date().getMonth() + 1).toString();
+            let currentDate = (new Date().getDate() < 10 ? `0` : ``) + new Date().getDate().toString();
+            let currentHour = (new Date().getHours() == 0 ? `12`: (new Date().getHours() < 10 ? `0` : ``)) + new Date().getHours().toString();
+            let currentMinute = (new Date().getMinutes() < 10 ? `0` : ``) + new Date().getMinutes().toString();
+            
+            let soon = `${currentYear}-${currentMonth}-${currentDate}T${currentHour}:59`
+            let soon1 = `${currentYear}-${currentMonth}-${currentDate}T${currentHour}:51`
+            let soon2 = `${currentYear}-${currentMonth}-${currentDate}T${currentHour}:05`
+            let tomorrow = `${currentYear}-${currentMonth}-28T12:00`;
+            let tomorrow1 = `${currentYear}-${currentMonth}-28T13:00`;
+            let overdue = `${currentYear}-01-01T${currentHour}:${currentMinute}`;
+            let overdue1 = `${currentYear}-12-24T${currentHour}:${currentMinute}`;
 
             let schedule1 = factory(tomorrow, `Car maintenance`, `High`, `tab-2`);
             let schedule2 = factory(soon,`Laundry`, `Low`, `tab-3`);

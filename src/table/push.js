@@ -2,6 +2,7 @@ import storage from '../storage/storage.js';
 import options from './rowOptions.js';
 import lastEdited from './lastEdited.js';
 import tag from '../form/tag.js';
+import calendar from '../form/calendar.js';
 //push populates table
 let push = {
     init: () => {
@@ -25,13 +26,13 @@ let push = {
             let desc = document.createElement(`td`);
             let priority = document.createElement(`td`);
             let options = document.createElement(`td`);
-                due.className = `due-${storage.storage[i].id} due`;
-                desc.className = `desc-${storage.storage[i].id} desc`;
-                priority.className = `priority-${storage.storage[i].id} priority`;
-                options.className = `options-${storage.storage[i].id} options`;
-                due.innerText = push.dateSplitter(i);
-                desc.textContent = storage.storage[i].desc;
-                priority.textContent = storage.storage[i].priority;
+            due.className = `due-${storage.storage[i].id} due`;
+            desc.className = `desc-${storage.storage[i].id} desc`;
+            priority.className = `priority-${storage.storage[i].id} priority`;
+            options.className = `options-${storage.storage[i].id} options`;
+            due.innerText = push.dateSplitter(i);
+            desc.textContent = storage.storage[i].desc;
+            priority.textContent = storage.storage[i].priority;
             row.append(due, desc, priority, options);
             row.id = storage.storage[i].id;
 
@@ -49,11 +50,13 @@ let push = {
     },
     //convert the Date().toISOString() to a more friendly format
     dateSplitter: (i) => {
-        let today = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`;
+        let currentYear = new Date().getFullYear();
+        let currentMonth = (new Date().getMonth() + 1 < 10 ? `0` : ``) + (new Date().getMonth() + 1).toString();
+        let currentDate = (new Date().getDate() < 10 ? `0` : ``) + new Date().getDate().toString();
+        let today = `${currentYear}-${currentMonth}-${currentDate}`;
         //slice out date from time
         let date = storage.storage[i].due;
         date = date.slice(0, 10);
-
         //flip yyyy-dd-mm to mm-dd-yyyy lol
         let dd = date.slice(8);
         let mm = date.slice(5, 7);
@@ -73,7 +76,7 @@ let push = {
     },
     //add overdue div if time is over now
     overdue: (row, due, i) => {
-        let now = push.currentTime();
+        let now = calendar.currentTime();
         let date = storage.storage[i].due;
         let compare = push.compare(date, now);
         if(compare <= 0){

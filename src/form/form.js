@@ -1,18 +1,27 @@
-import calendar from './calendar.js';
-import desc from './desc.js';
-import submit from './submit.js';
-import priority from './priority.js';
-import tag from './tag.js';
+import calendar from './calendar';
+import description from './description';
+import submit from './submit';
+import priority from './priority';
+import tag from './tag';
 
-let form = {
-    formDiv: document.createElement(`form`),
-    init: () => {
-        let title = document.createElement(`div`);
-        title.textContent = `Add To Do Item`;
-        title.classList.add(`form-title`);
-        form.formDiv.id = `form`;
-        form.formDiv.append(title, desc(), calendar.calendarDiv, priority(), tag.init(), submit.submit());
-    },
-}
+const form = {
+  formDiv: document.createElement('form'),
+
+  init: () => {
+    const title = document.createElement('div');
+    title.textContent = 'Add To Do Item';
+    title.classList.add('form-title');
+    form.formDiv.id = 'form';
+    form.formDiv.append(
+      title,
+      description(),
+      calendar.calendarDiv,
+      priority(),
+      tag.init(),
+      submit.submit(),
+    );
+  },
+};
+
 form.init();
 export default form.formDiv;

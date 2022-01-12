@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/form/desc.js":
-/*!**************************!*\
-  !*** ./src/form/desc.js ***!
-  \**************************/
+/***/ "./src/form/description.js":
+/*!*********************************!*\
+  !*** ./src/form/description.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ desc)\n/* harmony export */ });\nfunction desc(){\n    let desc = document.createElement(`div`);\n        desc.className = `form-desc`;\n    let label = document.createElement(`label`);\n        label.textContent = `Description:`;\n        label.for = `text`\n    let textDiv = document.createElement(`div`);\n        textDiv.className = `text-div`\n    let textBox = document.createElement(`textarea`);\n        textBox.className = `text`;\n        textBox.id = `text`;\n        textBox.required = true;\n        textBox.autocapitalize = `sentences`;\n        textBox.spellcheck = true;\n        textBox.placeholder = `Get booster shot`;\n    let span = document.createElement(`span`);\n        span.class = `validity`;\n    textDiv.append(textBox, span);\n    desc.append(label, textDiv);\n    return desc;\n}\n\n//# sourceURL=webpack://to-do-list/./src/form/desc.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ description)\n/* harmony export */ });\nfunction description() {\n  const desc = document.createElement('div');\n  desc.className = 'form-desc';\n  const label = document.createElement('label');\n  label.textContent = 'Description:';\n  label.for = 'text';\n  const textDiv = document.createElement('div');\n  textDiv.className = 'text-div';\n  const textBox = document.createElement('textarea');\n  textBox.className = 'text';\n  textBox.id = 'text';\n  textBox.required = true;\n  textBox.autocapitalize = 'sentences';\n  textBox.spellcheck = true;\n  textBox.placeholder = 'Get booster shot';\n  const span = document.createElement('span');\n  span.class = 'validity';\n  textDiv.append(textBox, span);\n  desc.append(label, textDiv);\n  return desc;\n}\n\n\n//# sourceURL=webpack://to-do-list/./src/form/description.js?");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/form/desc.js"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/form/description.js"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;

@@ -1,27 +1,31 @@
-import storage from '../storage/storage.js';
-//add a class to recently edited/added items to animate a blinking indicator
-let edited = {
-    init: (obj) => {
-        edited.remove();
-        edited.add(obj);
-    },
-    //change all last edited values to false
-    remove: () => {
-        for(let i in storage.storage){
-            storage.storage[i].lastEdited = false;
-        }
-    },
-    add:(obj) => {
-        obj.lastEdited = true;
-    },
-    //add a last edited to highlight last edited item
-    highlight: () => {
-        let targetObject = storage.storage.find(x => x.lastEdited);
-        if(targetObject){
-            let edited = document.getElementById(`${targetObject.id}`);
-            edited.classList.add(`last-edited`);
-        }
-    }
-}
+import storage from '../storage/storage';
 
+// add a class to recently edited/added items to animate a blinking indicator
+const edited = {
+  init: (obj) => {
+    edited.remove();
+    edited.add(obj);
+  },
+
+  // change all last edited values to false
+  remove: () => {
+    for (let i = 0; i < storage.storage.length; i += 1) {
+      storage.storage[i].lastEdited = false;
+    }
+  },
+
+  add: (obj) => {
+    const updateEdit = obj;
+    updateEdit.lastEdited = true;
+  },
+
+  // add a last edited to highlight last edited item
+  highlight: () => {
+    const targetObject = storage.storage.find((x) => x.lastEdited);
+    if (targetObject) {
+      const edit = document.getElementById(`${targetObject.id}`);
+      edit.classList.add('last-edited');
+    }
+  },
+};
 export default edited;

@@ -1,92 +1,97 @@
-import push from './push.js';
-import storage from '../storage/storage.js';
-import lastEdited from './lastEdited.js';
-import tabs from './tabs.js';
+import push from './push';
+import storage from '../storage/storage';
+import lastEdited from './lastEdited';
+import tabs from './tabs';
 
-let options = {
-    init: () => {
-        options.addButtons();
-    },
-    addButtons: () => {
-        let listLength = document.getElementsByClassName(`list`).length;
-        for(let i = 0; i < listLength; i++){
-            let optionsDiv = document.querySelector(`.options-${storage.storage[i].id}`);
+const options = {
+  init: () => {
+    options.addButtons();
+  },
 
-            let completeButton = document.createElement(`button`);
-            let editButton = document.createElement(`button`);
-            let deleteButton = document.createElement(`button`);
+  addButtons: () => {
+    const listLength = document.getElementsByClassName('list').length;
+    for (let i = 0; i < listLength; i += 1) {
+      const optionsDiv = document.querySelector(
+        `.options-${storage.storage[i].id}`,
+      );
 
-            completeButton.className = `option-button complete`;
-            editButton.className = `option-button edit`;
-            deleteButton.className = `option-button delete`;
+      const completeButton = document.createElement('button');
+      completeButton.className = 'option-button complete';
+      completeButton.textContent = 'Complete';
+      completeButton.addEventListener('click', options.complete);
 
-            completeButton.textContent = `Complete`;
-            editButton.textContent = `Edit`;
-            deleteButton.textContent = `Delete`;
+      const editButton = document.createElement('button');
+      editButton.className = 'option-button edit';
+      editButton.textContent = 'Edit';
+      editButton.addEventListener('click', options.edit);
 
-            completeButton.addEventListener(`click`, options.complete);
-            editButton.addEventListener(`click`, options.edit);
-            deleteButton.addEventListener(`click`, options.delete);
+      const deleteButton = document.createElement('button');
+      deleteButton.className = 'option-button delete';
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', options.delete);
 
-            optionsDiv.append(completeButton, editButton, deleteButton);
-        }
-    },
-    complete: (e) => {
-        let targetObject = storage.storage.find(x => x.id === parseInt(e.target.parentNode.parentNode.id));
-        if(targetObject.complete){
-            targetObject.complete = false;
-            lastEdited.init(targetObject);
-            storage.save();
-            push();
-            tabs.tabSwap(storage.activeTab);
-        }
-        else{
-            targetObject.complete = true;
-            lastEdited.init(targetObject);
-            storage.save();
-            push();
-            tabs.tabSwap(storage.activeTab);
-        }
-    },
-    //copy contents of row to form and then delete row
-    edit: (e) => {
-        let targetObject = e.target.parentNode.parentNode.id;
-        let storageObject = storage.storage.find(x => x.id === parseInt(targetObject));
+      optionsDiv.append(completeButton, editButton, deleteButton);
+    }
+  },
 
-        let due = storageObject.due;
-        let desc = storageObject.desc;
-        let priority = storageObject.priority;
-        let tag = storageObject.tag;
+  complete: (e) => {
+    const targetObject = storage.storage.find(
+      (x) => x.id === parseInt(e.target.parentNode.parentNode.id, 10),
+    );
 
-        let dueInput = document.getElementById(`end`);
-        dueInput.value = due;
-        let textArea = document.getElementById(`text`);
-        textArea.defaultValue = desc;
-        let priorityInput = document.getElementById(priority);
-        priorityInput.checked = true;
-        let tagInput = document.getElementById(tag);
-        if(tagInput == null){
-            console.log(document.querySelector(`tag-color`));
-        }
-        else{
-            tagInput.checked = true;
-        }
+    if (targetObject.complete) {
+      targetObject.complete = false;
+      lastEdited.init(targetObject);
+      storage.save();
+      push();
+      tabs.tabSwap(storage.activeTab);
+    } else {
+      targetObject.complete = true;
+      lastEdited.init(targetObject);
+      storage.save();
+      push();
+      tabs.tabSwap(storage.activeTab);
+    }
+  },
 
-        options.delete(e);
+  // copy contents of row to form and then delete row
+  edit: (e) => {
+    const targetObject = e.target.parentNode.parentNode.id;
+    const storageObject = storage.storage.find(
+      (x) => x.id === parseInt(targetObject, 10),
+    );
 
-        let form = document.getElementById(`form`);
-        form.classList.add(`last-edited`);
-    },
-    //delete object from storage and redraw table
-    delete: (e) => {
-        let targetObject = e.target.parentNode.parentNode.id;
-        let storageObject = storage.storage.find(x => x.id === parseInt(targetObject));
-        storage.storage.splice(storage.storage.indexOf(storageObject), 1);
-        lastEdited.remove();
-        storage.save();
-        push();
-        tabs.tabSwap(storage.activeTab);
-    },
-}
+    const { due } = storageObject;
+    const { desc } = storageObject;
+    const { priority } = storageObject;
+    const { tag } = storageObject;
+
+    const dueInput = document.getElementById('end');
+    dueInput.value = due;
+    const textArea = document.getElementById('text');
+    textArea.defaultValue = desc;
+    const priorityInput = document.getElementById(priority);
+    priorityInput.checked = true;
+    const tagInput = document.getElementById(tag);
+    tagInput.checked = true;
+    options.delete(e);
+    const form = document.getElementById('form');
+    form.classList.add('last-edited');
+  },
+
+  // delete object from storage and redraw table
+  delete: (e) => {
+    const targetObject = e.target.parentNode.parentNode.id;
+    const storageObject = storage.storage.find(
+      (x) => x.id === parseInt(targetObject, 10),
+    );
+
+    storage.storage.splice(storage.storage.indexOf(storageObject), 1);
+    lastEdited.remove();
+    storage.save();
+    push();
+    tabs.tabSwap(storage.activeTab);
+  },
+};
 
 export default options.init;

@@ -14,7 +14,7 @@ const submit = {
     submitDiv.onclick = (e) => {
       e.preventDefault();
       const due = document.getElementById('end').value;
-      const desc = document.getElementById('text').value;
+      let desc = document.getElementById('text').value;
 
       let priority;
       if (document.querySelector('input[name="radio"]:checked') == null) {

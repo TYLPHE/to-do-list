@@ -1,133 +1,138 @@
 /*general form css*/
-form{
-    margin: .5rem;
-    padding: 0 1rem;
-    border: 10px solid #190b30cb;
-    min-width: 16rem;
+form {
+  margin: 0.5rem;
+  padding: 0 1rem;
+  border: 10px solid #190b30cb;
+  min-width: 16rem;
 }
-.form-title{
-    text-align: center;
-    font-size: 1.3rem;
-    margin: .5rem;
-    padding-top: .25rem;
+.form-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0.5rem;
+  padding-top: 0.25rem;
 }
 label {
-    display: block;
+  display: block;
 }
-span{
-    margin: auto 0;
+span {
+  margin: auto 0;
 }
-input{
-    cursor: pointer;
+input {
+  cursor: pointer;
 }
 
 /*description css*/
-.form-desc{
-    border: 1px solid #190b30cb;
-    padding: .3rem;
+.form-desc {
+  border: 1px solid #190b30cb;
+  padding: 0.3rem;
 }
-.form-desc:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+.form-desc:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
-.text-div{
-    display: flex;
+.text-div {
+  display: flex;
 }
-textarea{
-    width: 90%;
+textarea {
+  width: 90%;
 }
-textarea:invalid+span:after {
-    content: '✖';
-    color: rgb(214, 0, 0);
-    margin: 5px;
+textarea:invalid + span:after {
+  content: '✖';
+  color: rgb(214, 0, 0);
+  margin: 5px;
 }
-textarea:valid+span:after {
-    content: '✓';
-    color: green;
-    margin: 5px;
+textarea:valid + span:after {
+  content: '✓';
+  color: green;
+  margin: 5px;
 }
 
 /*date css*/
-.calendar{
-    border: 1px solid #190b30cb;
-    padding: .3rem;
-    margin: .15rem 0;
+.calendar {
+  border: 1px solid #190b30cb;
+  padding: 0.3rem;
+  margin: 0.15rem 0;
 }
-.calendar:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+.calendar:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
-#end{
-    text-align: center;
-    line-height: 1.5rem;
-    width: 87.3%;
+#end {
+  text-align: center;
+  line-height: 1.5rem;
+  width: 87.3%;
 }
-input:invalid+span:after {
-    content: '✖';
-    color: red;
-    padding: 0 5px;
+input:invalid + span:after {
+  content: '✖';
+  color: red;
+  padding: 0 5px;
 }
-input:valid+span:after {
-    content: '✓';
-    color: green;
-    padding: 0 5px;
+input:valid + span:after {
+  content: '✓';
+  color: green;
+  padding: 0 5px;
 }
 
 /*priority css*/
-.form-priority{
-    border: 1px solid #190b30cb;
-    padding: .3rem;
+.form-priority {
+  border: 1px solid #190b30cb;
+  padding: 0.3rem;
 }
-.form-priority:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+.form-priority:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
-.radio{
-    display: flex;
-    justify-content: space-between;
-    padding-top: .25rem;
-    margin: 0 20px;
-    height: 1.2rem;
-    transition: 100ms;
+.radio {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.25rem;
+  margin: 0 20px;
+  height: 1.2rem;
+  transition: 100ms;
 }
-.radio:hover{
-    padding-top: .25rem;
-    font-size: 1.2rem;
-    transition: 100ms;
-    cursor: pointer;
+.radio:hover {
+  padding-top: 0.25rem;
+  font-size: 1.2rem;
+  transition: 100ms;
+  cursor: pointer;
 }
-#Low, #Medium, #High{
-    margin: 0 .3rem auto auto;
+#Low,
+#Medium,
+#High {
+  margin: 0 0.3rem auto auto;
 }
 
 /*tag css*/
-.tag{
-    margin: .15rem 0;
-    padding: .3rem;
-    gap: .15rem;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #190b30cb;
+.tag {
+  margin: 0.15rem 0;
+  padding: 0.3rem;
+  gap: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #190b30cb;
 }
-.tag:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+.tag:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
-.tag-div{
-    display: flex;
-    align-items: center;
-    margin: 0 20px;
+.tag-div {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
 }
-.tag-color{
-    display: flex;
-    border: 1px solid #190b30cb;
-    width: 100%;
-    cursor: pointer;
-    padding: .3rem;
+.tag-color {
+  display: flex;
+  border: 1px solid #190b30cb;
+  width: 100%;
+  cursor: pointer;
+  padding: 0.3rem;
 }
-#tab-2, #tab-3, #tab-4, #tab-5{
-    margin: auto 0 auto auto;
+#tab-2,
+#tab-3,
+#tab-4,
+#tab-5 {
+  margin: auto 0 auto auto;
 }
 
 /*submit button css*/
-.submit{
-    padding: .40rem 2rem .2rem 2rem;
-    display: flex;
-    margin: .5rem auto;
+.submit {
+  padding: 0.4rem 2rem 0.2rem 2rem;
+  display: flex;
+  margin: 0.5rem auto;
 }

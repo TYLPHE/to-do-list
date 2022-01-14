@@ -26,9 +26,9 @@ const calendar = {
     const currentYear = new Date().getFullYear();
     let currentMonth;
     if (new Date().getMonth() + 1 < 10) {
-      currentMonth = `0${(new Date().getMonth() + 1)}`;
+      currentMonth = `0${new Date().getMonth() + 1}`;
     } else {
-      currentMonth = (new Date().getMonth() + 1);
+      currentMonth = new Date().getMonth() + 1;
     }
 
     let currentDate;

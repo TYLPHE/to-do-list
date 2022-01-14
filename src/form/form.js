@@ -18,7 +18,7 @@ const form = {
       calendar.calendarDiv,
       priority(),
       tag.init(),
-      submit.submit(),
+      submit.submit()
     );
   },
 };

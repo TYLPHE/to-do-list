@@ -1,100 +1,98 @@
 /*table css*/
-table{
-    table-layout: auto;
-    padding: 1rem;
-    border: 10px solid #e63946;
+table {
+  table-layout: auto;
+  padding: 1rem;
+  border: 10px solid #e63946;
 }
-.last-edited{
-    animation: blinker .3s;
+.last-edited {
+  animation: blinker 0.3s;
 }
-tr:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
-th{
-    border: 1px solid #190b30cb;
-    padding-top: .25rem;
+th {
+  border: 1px solid #190b30cb;
+  padding-top: 0.25rem;
 }
-td{
-    border: 1px solid #190b30cb;
+td {
+  border: 1px solid #190b30cb;
 }
-.due-header{
-    width: 7rem;
+.due-header {
+  width: 7rem;
 }
-.due{
-    padding-top: .25rem;
-    text-align: center;
+.due {
+  padding-top: 0.25rem;
+  text-align: center;
 }
-.priority-header{
-    width: 5rem;
+.priority-header {
+  width: 5rem;
 }
-.priority{
-    text-align: center;
-    height: inherit;
+.priority {
+  text-align: center;
+  height: inherit;
 }
-.desc-header{
-    min-width: 10rem;
-    width: 30rem;
+.desc-header {
+  min-width: 10rem;
+  width: 30rem;
 }
-.desc{
-    position: relative;
-    text-align: justify;
-    padding: .5rem .5rem .5rem 1.5rem;
+.desc {
+  position: relative;
+  text-align: justify;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
 }
-.table-tag{
-    display: block;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 1rem;
-    height: 100%;
+.table-tag {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 1rem;
+  height: 100%;
 }
-.completed{
-    text-decoration: line-through;
-    color: rgba(0, 0, 0, 0.288)
+.completed {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.288);
 }
-.overdue{
-    color: #d60000cb;
+.overdue {
+  color: #d60000cb;
 }
 
 /*options css*/
-.option-button{
-    display: block;
-    color:inherit;
-    background-color: transparent;
-    border: 1px solid #190b30cb;
-    padding-top: .25rem;
-    margin: .1rem .1rem;
-    text-align: center;
-    height: 1.5rem;
-    width: 6rem;
-    transition: 100ms;
+.option-button {
+  display: block;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid #190b30cb;
+  padding-top: 0.25rem;
+  margin: 0.1rem 0.1rem;
+  text-align: center;
+  height: 1.5rem;
+  width: 6rem;
+  transition: 100ms;
 }
-.option-button:hover{
-    padding-top: .25rem;
-    font-size: 1.01rem;
-    cursor: pointer;
-    transition: 100ms;
+.option-button:hover {
+  padding-top: 0.25rem;
+  font-size: 1.01rem;
+  cursor: pointer;
+  transition: 100ms;
 }
 
 @keyframes blinker {
-    0%{
-        
-        background-color: rgba(0, 0, 0, 0.15);
-    }
-    20%{
-        background-color: rgba(0, 0, 0, 0.0);
-    }
-    40%{
-        
-        background-color: rgba(0, 0, 0, 0.15);
-    }
-    60%{
-        background-color: rgba(0, 0, 0, 0.0);
-    }
-    80%{
-        background-color: rgba(0, 0, 0, 0.15);
-    }
-    100%{
-        background-color: none;
-    }
+  0% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  20% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  40% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  60% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  80% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    background-color: none;
+  }
 }

@@ -21,9 +21,9 @@ const storage = {
       const currentYear = new Date().getFullYear();
       let currentMonth;
       if (new Date().getMonth() + 1 < 10) {
-        currentMonth = `0${(new Date().getMonth() + 1)}`;
+        currentMonth = `0${new Date().getMonth() + 1}`;
       } else {
-        currentMonth = (new Date().getMonth() + 1);
+        currentMonth = new Date().getMonth() + 1;
       }
 
       let currentDate;
@@ -92,17 +92,15 @@ const storage = {
   },
 
   sort: () => {
-    storage.storage.sort(
-      (a, b) => {
-        if (a.due < b.due) {
-          return -1;
-        }
-        if (a.due > b.due) {
-          return 1;
-        }
-        return 0;
-      },
-    );
+    storage.storage.sort((a, b) => {
+      if (a.due < b.due) {
+        return -1;
+      }
+      if (a.due > b.due) {
+        return 1;
+      }
+      return 0;
+    });
   },
 };
 

@@ -20,7 +20,7 @@ To do lists are a staple in beginning tutorials becuase they can be very simple 
 
 ## Challenges
 ### Date and time
-I learned that setting a default date and time is very tricky. When the app is first loaded, you will have a form that automatically enter the current date and time. This is a feature I wanted to add to save the user the work of constantly entering a date and time.
+I learned that setting a default date and time is very tricky. When the app is first loaded, the form will automatically enter the current date and time. This is a feature I wanted to add to save the user the work of constantly entering a date and time.
 
 I dont think this is a pretty solution but it works:
 

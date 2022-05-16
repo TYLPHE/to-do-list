@@ -4,7 +4,7 @@
 ![](https://github.com/TYLPHE/TYLPHE/blob/main/readmeAssets/toDoList.gif)
 
 ## Links
-[Try To-do List here!](https://TYLPHE.github.io/to-do-list/dist/)
+[Try To-do List here!](https://tylphe.github.io/to-do-list/)
 
 [Link to the assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list)
 

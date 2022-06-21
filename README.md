@@ -24,7 +24,7 @@ I learned that setting a default date and time is very tricky. When the app is f
 
 I dont think this is a pretty solution but it works:
 
-```
+```javascript
   currentTime: () => {
     const currentYear = new Date().getFullYear();
     let currentMonth;
